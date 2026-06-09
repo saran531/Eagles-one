@@ -1,0 +1,288 @@
+.page-about-unique {
+  padding-top: 72px;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.about-hero {
+  position: relative;
+  padding: clamp(5rem, 9vw, 9rem) 0 clamp(4rem, 7vw, 7rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: floatOrb 14s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(251, 191, 36, 0.2);
+  top: -100px; left: -100px;
+}
+
+.orb-2 {
+  width: 500px; height: 500px;
+  background: rgba(16, 185, 129, 0.1);
+  bottom: -200px; right: -100px;
+  animation-delay: -3s;
+}
+
+.orb-3 {
+  width: 300px; height: 300px;
+  background: rgba(239, 68, 68, 0.1);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -50px) scale(1.1); }
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero-content h1 {
+  font-size: clamp(2.35rem, 6vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+/* Use a specific class to avoid conflict with global .hero-subtitle */
+.about-hero-sub {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Stats: no negative margin — sits naturally below hero */
+.about-stats-section {
+  padding: clamp(3rem, 5vw, 4rem) 0;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-secondary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: rgba(17, 34, 64, 0.8);
+}
+
+.stat-value {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+/* Mission / Vision */
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.mv-card {
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--accent-primary);
+}
+
+.mv-icon {
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+}
+
+.mv-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.mv-card p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Core Values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: var(--transition);
+}
+
+.value-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(251, 191, 36, 0.3);
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.05) 0%, rgba(255,255,255,0) 100%);
+}
+
+.value-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  color: var(--accent-primary);
+  transition: var(--transition);
+}
+
+.value-item:hover .value-icon-wrapper {
+  background: var(--accent-primary);
+  color: #000;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.value-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Footer Callout */
+.about-footer-callout {
+  padding-bottom: 8rem;
+}
+
+.about-punchline-card {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(17, 34, 64, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-punchline-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.punchline-icon {
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px var(--accent-primary));
+  animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--accent-primary)); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--accent-primary)); }
+}
+
+.about-punchline-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.about-punchline-card p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Mission Quote Box */
+.mission-quote-box {
+  margin-top: 2.5rem;
+  padding: 2.5rem;
+  background: rgba(251, 191, 36, 0.04);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 16px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.mission-quote {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mt-6 { margin-top: 2rem; }
+
+@media (max-width: 992px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .mv-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .about-hero { padding: 4rem 0; }
+  .mission-quote-box { padding: 1.4rem; }
+  .mission-quote { font-size: 1.05rem; }
+  .stat-value { font-size: 2rem; }
+  .mv-card { padding: 2rem 1.25rem; }
+  .about-punchline-card { padding: 2.25rem 1.25rem; }
+}

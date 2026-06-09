@@ -1,0 +1,185 @@
+.page-whysolar-unique {
+  padding-top: 72px;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.whysolar-hero {
+  padding: clamp(5rem, 9vw, 9rem) 0 clamp(4rem, 6vw, 5rem);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.whysolar-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(251, 191, 36, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+/* Center the hero content */
+.whysolar-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whysolar-hero .badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.whysolar-hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+/* Use own class instead of conflicting global .hero-subtitle */
+.whysolar-hero-sub {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.whysolar-roi-details {
+  background: var(--bg-secondary);
+}
+
+.roi-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.roi-info-card {
+  padding: clamp(1.4rem, 3vw, 2.5rem) clamp(1.2rem, 2vw, 2rem);
+  border-radius: 16px;
+  background: rgba(17, 34, 64, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: var(--transition);
+}
+
+.roi-info-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+.roi-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(251, 191, 36, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.roi-info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.roi-info-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.roi-disclaimer-box {
+  margin-top: 4rem;
+  padding: 1.5rem 2rem;
+  background: rgba(251, 191, 36, 0.04);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.roi-disclaimer-box strong {
+  color: var(--accent-primary);
+}
+
+.whysolar-cta-section {
+  padding-bottom: 8rem;
+}
+
+.whysolar-cta-box {
+  padding: 5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  background: rgba(17, 34, 64, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.whysolar-cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.whysolar-cta-box h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.whysolar-cta-box p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Utilities needed on this page */
+.text-center { text-align: center; }
+.mb-12 { margin-bottom: 4rem; }
+.mt-6 { margin-top: 2rem; }
+
+@media (max-width: 1024px) {
+  .roi-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .roi-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .roi-disclaimer-box {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.25rem;
+  }
+  .whysolar-cta-box { padding: 2.5rem 1.25rem; }
+  .whysolar-hero h1 { font-size: 2.2rem; }
+}

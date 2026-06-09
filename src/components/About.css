@@ -1,0 +1,201 @@
+/* ============ ABOUT SECTION ============ */
+.about-section-new {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Floating orbs */
+.about-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+.about-orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(251, 191, 36, 0.08);
+  top: -200px; left: -200px;
+}
+.about-orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(59, 130, 246, 0.08);
+  bottom: -150px; right: -150px;
+}
+
+.about-headline {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+}
+
+/* Mission Card */
+.about-mission-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 860px;
+  margin: 0 auto 5rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.about-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), transparent);
+}
+
+.mission-quote-icon {
+  color: var(--accent-primary);
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+}
+
+.mission-lead {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.mission-quote {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+  border-left: 3px solid var(--accent-primary);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mission-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mission-author-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+.mission-author div {
+  display: flex;
+  flex-direction: column;
+}
+.mission-author strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+.mission-author small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Values Grid */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.about-value-card {
+  position: relative;
+  padding: 2rem 1.5rem 2.5rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.av-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.av-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.av-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.av-accent {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.about-value-card:hover .av-accent {
+  transform: scaleX(1);
+}
+
+/* Punchline */
+.about-punchline-new {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-punchline-new { font-size: 1.5rem; }
+}
+@media (max-width: 768px) {
+  .about-values-grid { grid-template-columns: 1fr; }
+  .about-mission-card { padding: 2rem; }
+  .mission-quote { font-size: 1.15rem; }
+}

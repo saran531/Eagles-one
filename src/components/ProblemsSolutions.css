@@ -1,0 +1,206 @@
+/* ============ PROBLEMS & SOLUTIONS ============ */
+.ps-section {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251,191,36,0.2), transparent);
+}
+
+/* Tabs */
+.ps-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.5rem;
+  border-radius: 60px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ps-tab {
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  border-radius: 50px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ps-tab.active {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #000;
+  box-shadow: 0 4px 20px rgba(251,191,36,0.3);
+}
+
+/* Grid */
+.ps-grid {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ps-grid-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Card */
+.ps-card {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 2rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--danger), transparent);
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ps-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--success), transparent);
+  border-radius: 0 3px 3px 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ps-card:hover {
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.ps-card:hover::before,
+.ps-card:hover::after {
+  opacity: 1;
+}
+
+.ps-problem,
+.ps-solution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ps-problem {
+  padding-left: 0.5rem;
+}
+
+.ps-solution {
+  padding-right: 0.5rem;
+}
+
+.ps-problem h4 {
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.ps-solution h4 {
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.ps-problem p,
+.ps-solution p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.ps-punchline {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Arrow divider */
+.ps-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.2);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin: 0 auto;
+  transition: var(--transition);
+}
+
+.ps-card:hover .ps-divider {
+  background: var(--accent-primary);
+  color: #000;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .ps-tabs {
+    width: 100%;
+    border-radius: 18px;
+    gap: 0.4rem;
+  }
+  .ps-tab {
+    flex: 1;
+    padding: 0.75rem 0.8rem;
+  }
+  .ps-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.35rem;
+  }
+  .ps-problem, .ps-solution { padding: 0; }
+  .ps-problem h4, .ps-solution h4 { justify-content: center; }
+  .ps-divider { transform: rotate(90deg); margin: 0.5rem auto; }
+  .ps-card:hover .ps-divider { transform: rotate(90deg) scale(1.1); }
+}
